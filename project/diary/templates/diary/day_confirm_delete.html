@@ -1,0 +1,25 @@
+{% extends 'diary/base.html' %}
+
+{% block content %}
+<h1>削除</h1>
+<form class="form" action="" method="POST">
+    <table class="table">
+        <tr>
+            <th>{{ day.title.label }}</th>
+            <td>{{ day.title }}</td>
+        </tr>
+        <tr>
+            <th>{{ day.text.label }}</th>
+            <td>{{ day.text }}</td>
+        </tr>
+        <tr>
+            <th>{{ day.date.label }}</th>
+            <td>{{ day.date }}</td>
+        </tr>
+    </table>
+    <!-- {{ form.as_table }} -->
+    <p>こちらのデータを削除しますか</p>
+    <button class="btn btn-primary" type="submit">はい</button>
+    {% csrf_token %}
+</form>
+{% endblock %}
